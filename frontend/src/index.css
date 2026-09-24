@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans text-sm;
+  }
+
+  /* Tabular figures keep currency and percentage columns aligned, which matters
+     when an officer is scanning a table of amounts. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-white border border-ink-200 rounded-md shadow-panel;
+  }
+
+  .panel-header {
+    @apply px-4 py-3 border-b border-ink-200 flex items-center justify-between gap-3;
+  }
+
+  .panel-title {
+    @apply text-[13px] font-semibold text-ink-800 uppercase tracking-wide;
+  }
+
+  .label {
+    @apply text-2xs font-semibold uppercase tracking-wide text-ink-500;
+  }
+
+  .field-value {
+    @apply text-sm text-ink-900;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded
+           text-[13px] font-semibold border transition-colors
+           disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink-800 text-white border-ink-800 hover:bg-ink-700;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-ink-700 border-ink-300 hover:bg-ink-50;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 rounded border border-ink-300 bg-white text-sm
+           placeholder:text-ink-400 focus:outline-none focus:border-ink-500
+           focus:ring-1 focus:ring-ink-500;
+  }
+
+  .th {
+    @apply px-3 py-2.5 text-left text-2xs font-semibold uppercase tracking-wide
+           text-ink-500 border-b border-ink-200 bg-ink-50 whitespace-nowrap;
+  }
+
+  .td {
+    @apply px-3 py-2.5 border-b border-ink-100 align-middle;
+  }
+
+  .link {
+    @apply text-ink-700 underline decoration-ink-300 underline-offset-2 hover:decoration-ink-600;
+  }
+}

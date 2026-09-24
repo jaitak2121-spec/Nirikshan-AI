@@ -1,0 +1,20 @@
+# NIRIKSHAN AI — backend dependencies
+#
+# Versions are pinned to what this prototype was built and tested against.
+
+fastapi==0.115.6
+uvicorn==0.34.0
+sqlalchemy==2.0.41
+pydantic==2.10.5
+pandas==2.2.3
+numpy==2.4.3
+
+# Note on scikit-learn
+# -------------------
+# The duplicate-detection design calls for TF-IDF + cosine similarity. Rather
+# than pull in scikit-learn and scipy for two functions applied to ~26 short
+# strings, both are implemented directly in NumPy in
+# `anomaly_engine/text_similarity.py`, matching scikit-learn's default
+# TfidfVectorizer behaviour (smooth IDF, L2 row normalisation, the
+# `(?u)\b\w\w+\b` token pattern). This keeps the dependency footprint small and
+# the arithmetic auditable. See that module for the full note.

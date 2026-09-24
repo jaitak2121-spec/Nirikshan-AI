@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node — committed platform-specific binaries (esbuild, rollup) break a Linux
+# build on Vercel, so dependencies must be installed by the build, not shipped.
+node_modules/
+
+# Build output
+# frontend/dist is deliberately NOT ignored: it is committed so the deployment
+# needs no Node toolchain at all. Vercel serves it as static files and only has
+# to build the Python function. Rebuild with `npm run build` before committing.
+frontend/test/dist/
+.vercel/
+
+# Generated at first run; recreated and reseeded automatically
+database/*.db

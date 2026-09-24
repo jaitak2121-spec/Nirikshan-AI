@@ -1,0 +1,15 @@
+# Dependencies for the Vercel Python serverless function (api/index.py).
+#
+# Deliberately narrower than backend/requirements.txt, which is the list for
+# local development:
+#   - uvicorn is omitted: Vercel serves the ASGI app itself, there is no server
+#     process to run.
+#   - pandas is omitted: nothing in the codebase imports it, and it would add
+#     roughly a hundred megabytes to a bundle with a hard size limit.
+#
+# Keep the versions in step with backend/requirements.txt.
+
+fastapi==0.115.6
+sqlalchemy==2.0.41
+pydantic==2.10.5
+numpy==2.4.3
