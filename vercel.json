@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
   "buildCommand": "echo 'Using prebuilt frontend/dist — nothing to build.'",
   "installCommand": "echo 'No Node dependencies needed.'",
   "outputDirectory": "frontend/dist",
