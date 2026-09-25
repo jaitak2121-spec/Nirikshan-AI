@@ -6,7 +6,6 @@
 #     process to run.
 #   - pandas is omitted: nothing in the codebase imports it, and it would add
 #     roughly a hundred megabytes to a bundle with a hard size limit.
-#
 # Keep the versions in step with backend/requirements.txt.
 
 fastapi==0.115.6
